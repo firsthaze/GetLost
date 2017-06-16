@@ -1,11 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\UnityChan\Scripts\CameraController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\CharacterScaling.cs">
     <Files>
-      <File FileName="Assets\UnityChan\Scripts\CameraController.cs" Line="37" Column="22" />
-      <File FileName="Assets\CameraRotater.cs" Line="10" Column="27" />
-      <File FileName="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" Line="26" Column="9" />
-      <File FileName="Assets\PlayerController.cs" Line="20" Column="54" />
+      <File FileName="Assets\Script\CharacterScaling.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Character.cs" Line="7" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

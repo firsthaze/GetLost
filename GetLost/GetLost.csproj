@@ -84,10 +84,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\AvalibleObject.cs" />
     <Compile Include="Assets\Script\CameraRotater.cs" />
     <Compile Include="Assets\Script\Character.cs" />
     <Compile Include="Assets\Script\CharacterScaling.cs" />
-    <Compile Include="Assets\Script\GroundSensor.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />

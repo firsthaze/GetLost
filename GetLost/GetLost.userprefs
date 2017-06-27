@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\CharacterScaling.cs">
     <Files>
-      <File FileName="Assets\Script\PlayerController.cs" Line="12" Column="2" />
-      <File FileName="Assets\Script\GroundSensor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\CharacterScaling.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Character.cs" Line="7" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

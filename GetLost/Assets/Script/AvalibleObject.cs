@@ -26,7 +26,7 @@ public class AvalibleObject : MonoBehaviour {
         return this.isGrab;
     }
 
-    private UseObject()
+    /*private UseObject()
     {
-    }
+    }*/
 }

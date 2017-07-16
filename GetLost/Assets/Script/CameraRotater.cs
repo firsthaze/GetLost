@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraRotater : MonoBehaviour {
 
 	public Transform player;
+	public float height = 2;
 	public float x = 0;
 	public float y = 15;
 	public float xSpeed = 100;
@@ -37,8 +38,9 @@ public class CameraRotater : MonoBehaviour {
 			y += 360;
 		}
 
-		transform.position = Quaternion.Euler (y, x, 0) * new Vector3 (0, 1, -distance) + player.position;
+		transform.position = Quaternion.Euler (y, x, 0) * new Vector3 (0, height, -distance) + player.position;
 		transform.rotation = Quaternion.Euler (y, x, 0);
 	}
+
 
 }

@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour {
 		anim.SetFloat("Speed", playerVelocity.magnitude);
 
 		this.transform.rotation = Quaternion.Euler(0, camera.transform.rotation.eulerAngles.y, 0);
-		Debug.Log(rigidbody.velocity);
 	}
 
 }

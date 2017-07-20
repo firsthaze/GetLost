@@ -89,6 +89,7 @@
     <Compile Include="Assets\Script\Character.cs" />
     <Compile Include="Assets\Script\CharacterScaling.cs" />
     <Compile Include="Assets\Script\GroundSensor.cs" />
+    <Compile Include="Assets\Script\HPDisplay.cs" />
     <Compile Include="Assets\Script\ObjectThreshold.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\SelectItemConcroller.cs" />

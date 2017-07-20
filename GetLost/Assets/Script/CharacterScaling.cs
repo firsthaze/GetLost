@@ -13,10 +13,10 @@ public class CharacterScaling : MonoBehaviour {
 	void Start ()
     {
 		chargeSpeed = 1f;
-        dischargeSpeed = 0.5f;
+        dischargeSpeed = 0.1f;
         chargeRate = 0.05f;
-        dischargeRate = 0.001f;
-        characterInfo = new Character ();
+        dischargeRate = 0.0002f;
+        characterInfo = this.transform.gameObject.GetComponent<Character>();
 		characterVolume = characterInfo.GetEletricCharge ();
         tempForScale = transform.localScale;
     }

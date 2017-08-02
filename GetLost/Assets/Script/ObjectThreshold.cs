@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class ObjectThreshold : MonoBehaviour {
     public float _weightThreshold;
-
+    public bool _isFuctional;
 	// Use this for initialization
 	void Start () {
-        _weightThreshold = 0f;
     }
 	
 	// Update is called once per frame
@@ -15,9 +14,21 @@ public class ObjectThreshold : MonoBehaviour {
 		
 	}
 
-    float GetWeightThreshold()
+    public float GetWeightThreshold()
     {
         return _weightThreshold;
     }
 
+    public bool GetIsObjectCanMove(float electricCharge)
+    {
+        if (electricCharge > _weightThreshold)
+            return true;
+        else
+            return false;
+    }
+
+    public bool GetIsFunctional()
+    {
+        return _isFuctional;
+    }
 }

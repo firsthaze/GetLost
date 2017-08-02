@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectItemConcroller : MonoBehaviour {
-
+    private GameObject EventSystem;
 	public Transform camera;
 	public float distance = 3;
-
     private GameObject Player;
 	private RaycastHit hit;
     private Transform PlayerParent;
     private Transform WorldParent;
     private bool isGrab;
+
 	// Use this for initialization
 	void Start () {
+        EventSystem = GameObject.Find("EventSystem");
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerParent = Player.GetComponent<Transform>();
         WorldParent = GameObject.FindGameObjectWithTag("World").GetComponent<Transform>();
@@ -33,17 +34,27 @@ public class SelectItemConcroller : MonoBehaviour {
             {
                 if (hit.transform.CompareTag("Item"))
                 {
-                    Player.GetComponent<Character>().SetIsGrabing(true);
-                    hit.transform.tag = "Grabed";
-                    hit.transform.SetParent(PlayerParent);
-                    Debug.Log("get item");
+                    if (hit.transform.GetComponent<ObjectThreshold>().GetIsObjectCanMove(Player.GetComponent<Character>().GetEletricCharge()))
+                    {
+                        // 可以把物件拿起來
+                        Player.GetComponent<Character>().SetIsGrabing(true);
+                        hit.transform.tag = "Grabed";
+                        hit.transform.SetParent(PlayerParent);
+                        Debug.Log("get item");
+
+                        // 該物件有功能可以使用
+                        if (hit.transform.GetComponent<ObjectThreshold>().GetIsFunctional())
+                        {
+                            EventSystem.GetComponent<DisplayNoticeBoard>().ShowNoticeBoard();
+                        }
+                    }
                 }
             }
             else
             {
                 if (GameObject.FindGameObjectWithTag("Grabed"))
                 {
-                    Player.GetComponent<Character>().SetIsGrabing(false);
+                    Player.GetComponent<Character>().SetIsGrabing(false); 
                     GameObject temp = GameObject.FindGameObjectWithTag("Grabed");
                     temp.transform.SetParent(WorldParent);
                     GameObject.FindGameObjectWithTag("Grabed").transform.tag = "Item";

@@ -36,12 +36,8 @@ public class CharacterScaling : MonoBehaviour {
 		transform.localScale = temp;
 	}*/
 
-    private void OnMouseDrag()
-    {
-        Charge();
-    }
 
-    private void Charge()
+    public void Charge()
     {
         characterVolume = characterInfo.GetEletricCharge();
         characterVolume += chargeSpeed;

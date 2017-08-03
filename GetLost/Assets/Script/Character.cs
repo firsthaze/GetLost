@@ -23,6 +23,11 @@ public class Character : MonoBehaviour
 		_electricCharge = electricCharge;
 	}
 
+	public void LoseEletricCharge(float electricCharge)
+	{
+		_electricCharge -= electricCharge;
+	}
+
     public bool GetIsGrabing()
     {
         return isGrabing;

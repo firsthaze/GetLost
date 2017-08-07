@@ -1,37 +1,15 @@
 fileFormatVersion: 2
-guid: 0f3502c086f8cee439ba5e06485428fb
-timeCreated: 1498541281
+guid: 2e650fa8fe66def4b88a97a26400f9a2
+timeCreated: 1502081010
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Box001
-    100002: ChamferCyl001
-    100004: ChamferCyl002
-    100006: ChamferCyl003
-    100008: Spring001
-    100010: //RootNode
-    400000: Box001
-    400002: ChamferCyl001
-    400004: ChamferCyl002
-    400006: ChamferCyl003
-    400008: Spring001
-    400010: //RootNode
-    2300000: Box001
-    2300002: ChamferCyl001
-    2300004: ChamferCyl002
-    2300006: ChamferCyl003
-    2300008: Spring001
-    3300000: Box001
-    3300002: ChamferCyl001
-    3300004: ChamferCyl002
-    3300006: ChamferCyl003
-    3300008: Spring001
-    4300000: ChamferCyl001
-    4300002: ChamferCyl002
-    4300004: Box001
-    4300006: Spring001
-    4300008: ChamferCyl003
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Box001
   materials:
     importMaterials: 1
     materialName: 0

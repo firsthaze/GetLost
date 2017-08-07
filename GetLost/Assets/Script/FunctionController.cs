@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class FunctionController : MonoBehaviour {
     public GameObject Player;
-	// Use this for initialization
-	void Start () {
+    public GameObject Body_Face;
+    public GameObject Body_Body;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -29,6 +31,7 @@ public class FunctionController : MonoBehaviour {
 
     void DoCharge()
     {
-        Player.GetComponent<CharacterScaling>().Charge();
+        Body_Face.GetComponent<CharacterScaling>().Charge();
+        Body_Body.GetComponent<CharacterScaling>().Charge();
     }
 }

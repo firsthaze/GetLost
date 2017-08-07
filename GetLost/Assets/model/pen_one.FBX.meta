@@ -1,30 +1,26 @@
 fileFormatVersion: 2
-guid: 15de221b69002b54b921d3608d86fee9
-timeCreated: 1498541284
+guid: 649c3e29c7764254eaf431a7857df52e
+timeCreated: 1502079097
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Camera001
-    100002: Camera001.Target
-    100004: Capsule002
-    100006: ChamferCyl001
-    100008: Cone001
-    100010: Cone004
-    100012: Cylinder001
-    100014: //RootNode
-    100016: Tube001
-    100018: Tube002
-    400000: Camera001
-    400002: Camera001.Target
-    400004: Capsule002
-    400006: ChamferCyl001
-    400008: Cone001
-    400010: Cone004
-    400012: Cylinder001
-    400014: //RootNode
-    400016: Tube001
-    400018: Tube002
+    100000: Capsule002
+    100002: ChamferCyl001
+    100004: Cone001
+    100006: Cone004
+    100008: Cylinder001
+    100010: //RootNode
+    100012: Tube001
+    100014: Tube002
+    400000: Capsule002
+    400002: ChamferCyl001
+    400004: Cone001
+    400006: Cone004
+    400008: Cylinder001
+    400010: //RootNode
+    400012: Tube001
+    400014: Tube002
     2300000: Capsule002
     2300002: ChamferCyl001
     2300004: Cone001

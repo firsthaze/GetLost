@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: 8285128010910c043b7fa2ba59266249
-timeCreated: 1500273363
+guid: 20629c8e3fc35804587505858804ebd4
+timeCreated: 1502088938
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Plane001
+    100004: Plane002
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
+    400002: Plane001
+    400004: Plane002
+    2300000: Plane001
+    2300002: Plane002
+    3300000: Plane001
+    3300002: Plane002
     4300000: Plane001
+    4300002: Plane002
   materials:
     importMaterials: 1
     materialName: 0

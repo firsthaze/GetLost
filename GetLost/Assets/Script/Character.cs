@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
 	//constructor
 	public Character()
 	{
-		_electricCharge = 100f;
+		_electricCharge = 30f;
         isGrabing = false;
 
     }

@@ -19,22 +19,34 @@ public class CharacterScaling : MonoBehaviour {
         characterInfo = this.GetComponent<Character>();
         eletricCharge = characterInfo.GetEletricCharge ();
         tempForScale = transform.localScale;
+        Scaling();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         Discharge();
-	}
+        Scaling();
+    }
 
-    /*void Scaling(){
-		eletricCharge += Time.deltaTime * chargeSpeed;
-		characterInfo.SetEletricCharge (eletricCharge);
-		temp.x += Time.deltaTime;
-		temp.y += Time.deltaTime;
-		temp.z += Time.deltaTime;
-		transform.localScale = temp;
-	}*/
+    void Scaling(){
+        eletricCharge = characterInfo.GetEletricCharge();
+        float tempCharge = eletricCharge / 10;
+        float tempScale = (((tempCharge * tempCharge) - tempCharge + 15) / 35);
+        if (eletricCharge >= 30)
+        {
+            tempForScale.x = tempScale;
+            tempForScale.y = tempScale;
+            tempForScale.z = tempScale;
+            transform.localScale = tempForScale;
+            Debug.Log("tempForScale.x = " + tempForScale.x);
+        }
+        else
+        {
+            // Do Nothing
+            transform.localScale = tempForScale;
+        }
+    }
 
 
     public void Charge()
@@ -42,7 +54,7 @@ public class CharacterScaling : MonoBehaviour {
         eletricCharge = characterInfo.GetEletricCharge();
         eletricCharge += chargeSpeed;
         characterInfo.SetEletricCharge(eletricCharge);
-        if (tempForScale.x > 3)
+        /*if (tempForScale.x > 3)
         {
             tempForScale.x = 3;
             tempForScale.y = 3;
@@ -54,7 +66,7 @@ public class CharacterScaling : MonoBehaviour {
             tempForScale.y += chargeRate;
             tempForScale.z += chargeRate;
         }
-        transform.localScale = tempForScale;
+        transform.localScale = tempForScale;*/
     }
 
     private void Discharge(){

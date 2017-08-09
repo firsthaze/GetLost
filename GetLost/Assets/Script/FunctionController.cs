@@ -31,7 +31,6 @@ public class FunctionController : MonoBehaviour {
 
     void DoCharge()
     {
-        Body_Face.GetComponent<CharacterScaling>().Charge();
-        Body_Body.GetComponent<CharacterScaling>().Charge();
+        Player.gameObject.GetComponent<CharacterScaling>().Charge();
     }
 }

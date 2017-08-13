@@ -52,7 +52,8 @@ public class CameraRotater : MonoBehaviour {
 
 		//攝影機移動與旋轉
 		float currentPlayerHeight = height * (player.localScale.y / originPlayerHeight);
-		transform.position = Quaternion.Euler (y, x, 0) * new Vector3 (0, currentPlayerHeight, -distance) + player.position;
+		float currentDistance = distance * (player.localScale.y / originPlayerHeight);
+		transform.position = Quaternion.Euler (y, x, 0) * new Vector3 (0, currentPlayerHeight, -currentDistance) + player.position;
 		transform.rotation = Quaternion.Euler (y, x, 0);
 	}
 

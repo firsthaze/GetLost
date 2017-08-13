@@ -23,9 +23,15 @@ public class Character : MonoBehaviour
 		_electricCharge = electricCharge;
 	}
 
-	public void LoseEletricCharge(float electricCharge)
+	public bool LoseEletricCharge(float lostElectricCharge)
 	{
-		_electricCharge -= electricCharge;
+		if (_electricCharge > lostElectricCharge) {
+			_electricCharge -= lostElectricCharge;
+			return true;
+		} else {
+			Debug.Log ("電力不足" + lostElectricCharge);
+			return false;
+		}
 	}
 
     public bool GetIsGrabing()

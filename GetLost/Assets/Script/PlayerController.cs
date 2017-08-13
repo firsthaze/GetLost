@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float lightningSpeed = 1000;
 	public float gravity = 0.5f;
 	public Transform camera;
+	public Transform feet;
 
 	private Vector3 playerVelocity;
 
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour {
 	void Start()
 	{
 		anim = GetComponent<Animator>();
-		groundSensor = this.transform.Find("Feet").GetComponent<GroundSensor>();
+		groundSensor = feet.GetComponent<GroundSensor> ();
 		characterController = GetComponent<CharacterController>();
 		character = GetComponent<Character>();
 	}
@@ -29,8 +30,16 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		feet.position = this.transform.position;
+		playerVelocity -= Vector3.up * gravity * Time.deltaTime;
+
+		if (character.GetIsGrabing())
+			moveSpeed = 5;
+		else
+			moveSpeed = 10;
+
 		//基本移動
-		if (characterController.isGrounded) {
+		if (groundSensor.isGrounded) {
 			if (Input.GetKey (KeyCode.W))
 				playerVelocity = new Vector3 (camera.forward.x, 0.0f, camera.forward.z) * moveSpeed * Time.deltaTime;
 			else if (Input.GetKey (KeyCode.S))
@@ -44,20 +53,23 @@ public class PlayerController : MonoBehaviour {
 
 			if (Input.GetKey (KeyCode.Space))
 				playerVelocity += Vector3.up * jumpSpeed * Time.deltaTime;
-		} else
-			playerVelocity -= Vector3.up * gravity * Time.deltaTime;
+		} 
+			
 
 		//扣血瞬移
-		if (Input.GetKeyUp (KeyCode.Q)) {
-			character.LoseEletricCharge (5);
-			if (Input.GetKey (KeyCode.S))
+		if (Input.GetKeyUp (KeyCode.Q) && character.LoseEletricCharge (1)) {
+			if (Input.GetKey (KeyCode.W))
+				characterController.Move (new Vector3 (camera.forward.x, 0.1f, camera.forward.z) * lightningSpeed * Time.deltaTime);
+			else if (Input.GetKey (KeyCode.S))
 				characterController.Move (new Vector3 (-camera.forward.x, 0.1f, -camera.forward.z) * lightningSpeed * Time.deltaTime);
 			else if (Input.GetKey (KeyCode.D))
 				characterController.Move (new Vector3 (camera.right.x, 0.1f, camera.right.z) * lightningSpeed * Time.deltaTime);
 			else if (Input.GetKey (KeyCode.A))
 				characterController.Move (new Vector3 (-camera.right.x, 0.1f, -camera.right.z) * lightningSpeed * Time.deltaTime);
+			else if (!groundSensor.isGrounded)
+				characterController.Move (new Vector3 (0, 1, 0) * lightningSpeed * Time.deltaTime);		
 			else
-				characterController.Move (new Vector3 (camera.forward.x, 0.1f, camera.forward.z) * lightningSpeed * Time.deltaTime);				
+				characterController.Move (new Vector3 (camera.forward.x, 0.1f, camera.forward.z) * lightningSpeed * Time.deltaTime);
 		}
 		
 		anim.SetFloat ("Speed", playerVelocity.magnitude * 10);

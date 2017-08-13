@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class GroundSensor : MonoBehaviour {
 
-	public bool isGround;
+	public bool isGrounded;
 
 	void OnTriggerEnter(Collider other) {
-		isGround = true;
+		if(!other.CompareTag("Player"))
+			isGrounded = true;
 	}
 
 	void OnTriggerExit(Collider other) {
-		isGround = false;
+		if (!other.CompareTag ("Player"))
+			isGrounded = false;
 	}
 
 }

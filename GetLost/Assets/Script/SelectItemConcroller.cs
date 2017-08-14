@@ -31,12 +31,22 @@ public class SelectItemConcroller : MonoBehaviour {
 	}
 
     void GetItem() {
+        if (Physics.Raycast(this.transform.position, camera.forward, out hit, distance))
+        {
+            if(hit.transform.GetComponent<ObjectThreshold>() != null)
+                if(hit.transform.GetComponent<ObjectThreshold>().GetIsFunctional())
+                    EventSystem.GetComponent<DisplayNoticeBoard>().ShowNoticeBoard();
+        }
+        else
+        {
+            EventSystem.GetComponent<DisplayNoticeBoard>().CloseNoticeBoard();
+        }
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("isgrab is : " + Player.GetComponent<Character>().GetIsGrabing());
             if (Physics.Raycast(this.transform.position, camera.forward, out hit, distance) && !Player.GetComponent<Character>().GetIsGrabing())
             {
-                if (hit.transform.CompareTag("Item"))
+                if (hit.transform.CompareTag("Item") || hit.transform.CompareTag("UsefulItem"))
                 {
                     // 是否可以把物件拿起來  判斷Threshold
                     if (hit.transform.GetComponent<ObjectThreshold>().GetIsObjectCanMove(Player.GetComponent<Character>().GetEletricCharge()))

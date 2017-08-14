@@ -11,8 +11,9 @@ public class CharacterScaling : MonoBehaviour {
     private float dischargeRate;  //玩家體積減小
     private GameObject grabObject; // 抓住的物件
     public GameObject[] Bodys; // 實際要放大縮小的物件
-	// Use this for initialization
-	void Start ()
+    Vector3 distance;
+    // Use this for initialization
+    void Start ()
     {
 		chargeSpeed = 1f;
         dischargeSpeed = 0.1f;
@@ -27,7 +28,7 @@ public class CharacterScaling : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Discharge();
+       // Discharge();
         Scaling();
     }
 
@@ -36,20 +37,26 @@ public class CharacterScaling : MonoBehaviour {
         eletricCharge = characterInfo.GetEletricCharge();
         float tempCharge = eletricCharge / 10;
         float tempScale = (((tempCharge * tempCharge) - tempCharge + 15) / 35);
-        if (eletricCharge >= 29)
+        if (eletricCharge >= 30)
         {
             tempForScale.x = tempScale;
             tempForScale.y = tempScale;
             tempForScale.z = tempScale;
 
             transform.localScale = tempForScale;
-
-            tempForScale.x = 1/tempScale;
-            tempForScale.y = 1/tempScale;
-            tempForScale.z = 1/tempScale;
-
-            grabObject.gameObject.transform.localScale = tempForScale;
             Debug.Log("tempForScale.x = " + tempForScale.x);
+            tempForScale.x = (1 / tempScale);
+            tempForScale.y = (1 / tempScale);
+            tempForScale.z = (1 / tempScale);
+            Debug.Log("tempForScale.x = " + tempForScale.x);
+            
+            if(distance == null)
+                distance = grabObject.gameObject.transform.localPosition - transform.localPosition;
+            grabObject.gameObject.transform.localScale = tempForScale;
+            grabObject.gameObject.transform.localPosition = distance;
+            tempForScale.x = tempScale;
+            tempForScale.y = tempScale;
+            tempForScale.z = tempScale;
         }
         else
         {

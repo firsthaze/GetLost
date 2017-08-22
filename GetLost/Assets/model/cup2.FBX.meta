@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: 6d4a1cec89aa58b49835a5ead39e3c72
-timeCreated: 1502089406
+guid: b8d37877cea8d2f479de36e1073532e4
+timeCreated: 1503382565
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: cup_body
-    100004: cup_edge
-    100006: Object001
     400000: //RootNode
-    400002: cup_body
-    400004: cup_edge
-    400006: Object001
-    2300000: cup_body
-    2300002: cup_edge
-    2300004: Object001
-    3300000: cup_body
-    3300002: cup_edge
-    3300004: Object001
-    4300000: cup_body
-    4300002: cup_edge
-    4300004: Object001
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: ChamferCyl001
   materials:
     importMaterials: 1
     materialName: 0

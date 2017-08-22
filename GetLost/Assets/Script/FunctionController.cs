@@ -6,6 +6,8 @@ public class FunctionController : MonoBehaviour {
     public GameObject Player;
     public GameObject Body_Face;
     public GameObject Body_Body;
+
+    public GameObject Capacitance;
     // Use this for initialization
     void Start () {
 		
@@ -20,7 +22,8 @@ public class FunctionController : MonoBehaviour {
     {
         switch (objectName)
         {
-            case "Capacity":
+            case "capacitance_60_once":
+                Capacitance = GameObject.Find("capacitance_60_once");
                 DoCharge();
                 break;
             default:
@@ -31,6 +34,12 @@ public class FunctionController : MonoBehaviour {
 
     void DoCharge()
     {
-        Player.gameObject.GetComponent<CharacterScaling>().Charge();
+        if (Capacitance.gameObject.transform.GetComponent<CapacitanceOnce>().GetReaminGL() > 0) ;
+        {
+            float temp = Capacitance.gameObject.transform.GetComponent<CapacitanceOnce>().GetReaminGL();
+            temp -= 0.02f;
+            Player.gameObject.GetComponent<CharacterScaling>().Charge();
+            Capacitance.gameObject.transform.GetComponent<CapacitanceOnce>().SetRemainGL(temp);
+        }
     }
 }

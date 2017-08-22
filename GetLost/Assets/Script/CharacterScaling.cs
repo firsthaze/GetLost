@@ -17,7 +17,7 @@ public class CharacterScaling : MonoBehaviour {
     {
 		chargeSpeed = 1f;
         dischargeSpeed = 0.1f;
-        chargeRate = 0.05f;
+        chargeRate = 0.02f;
         dischargeRate = 0.0002f;
         characterInfo = this.GetComponent<Character>();
         eletricCharge = characterInfo.GetEletricCharge ();

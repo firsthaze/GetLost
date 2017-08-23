@@ -6,7 +6,7 @@ public class GroundSensor : MonoBehaviour {
 
 	public bool isGrounded;
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerStay(Collider other) {
 		if(!other.CompareTag("Player"))
 			isGrounded = true;
 	}

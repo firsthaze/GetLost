@@ -46,10 +46,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BatteryAI.cs" />
      <Compile Include="Assets\Lightning.cs" />
      <Compile Include="Assets\ResistorAI.cs" />
+     <Compile Include="Assets\RobotAI.cs" />
      <Compile Include="Assets\Script\AvalibleObject.cs" />
      <Compile Include="Assets\Script\CameraRotater.cs" />
+     <Compile Include="Assets\Script\CapacitanceOnce.cs" />
      <Compile Include="Assets\Script\Character.cs" />
      <Compile Include="Assets\Script\CharacterScaling.cs" />
      <Compile Include="Assets\Script\DisplayNoticeBoard.cs" />

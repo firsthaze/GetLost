@@ -8,7 +8,7 @@ public class RobotAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rotateAngle = 2;
+		rotateAngle = 4;
 	}
 	
 	// Update is called once per frame

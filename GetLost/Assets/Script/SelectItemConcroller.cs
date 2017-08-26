@@ -46,7 +46,7 @@ public class SelectItemConcroller : MonoBehaviour {
             Debug.Log("isgrab is : " + Player.GetComponent<Character>().GetIsGrabing());
             if (Physics.Raycast(this.transform.position, camera.forward, out hit, distance) && !Player.GetComponent<Character>().GetIsGrabing())
             {
-                if (hit.transform.CompareTag("Item") || hit.transform.CompareTag("UsefulItem"))
+                if (hit.transform.CompareTag("Item"))
                 {
                     // 是否可以把物件拿起來  判斷Threshold
                     if (hit.transform.GetComponent<ObjectThreshold>().GetIsObjectCanMove(Player.GetComponent<Character>().GetEletricCharge()))

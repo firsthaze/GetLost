@@ -1,10 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RobotAI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\PlayerController.cs">
     <Files>
-      <File FileName="Assets\ResistorAI.cs" Line="24" Column="3" />
-      <File FileName="Assets\BatteryAI.cs" Line="26" Column="57" />
-      <File FileName="Assets\RobotAI.cs" Line="19" Column="101" />
+      <File FileName="Assets\ResistorAI.cs" Line="1" Column="1" />
+      <File FileName="Assets\BatteryAI.cs" Line="1" Column="1" />
+      <File FileName="Assets\RobotAI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\PlayerController.cs" Line="101" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

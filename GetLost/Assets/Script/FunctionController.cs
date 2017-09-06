@@ -6,7 +6,7 @@ public class FunctionController : MonoBehaviour {
     public GameObject Player;
     public GameObject Body_Face;
     public GameObject Body_Body;
-
+    public GameObject CapacitanceLength;
     public GameObject Capacitance;
     // Use this for initialization
     void Start () {
@@ -34,12 +34,17 @@ public class FunctionController : MonoBehaviour {
 
     void DoCharge()
     {
-        if (Capacitance.gameObject.transform.GetComponent<CapacitanceOnce>().GetReaminGL() > 0) ;
+
+        if (Capacitance.gameObject.transform.GetComponent<CapacitanceOnce>().GetReaminGL() > 0) 
         {
+            CapacitanceLength = Capacitance.gameObject.transform.GetChild(0).gameObject;
             float temp = Capacitance.gameObject.transform.GetComponent<CapacitanceOnce>().GetReaminGL();
-            temp -= 0.02f;
+            Debug.Log("GetReaminGL : " + temp);
+            temp -= 3f;
             Player.gameObject.GetComponent<CharacterScaling>().Charge();
             Capacitance.gameObject.transform.GetComponent<CapacitanceOnce>().SetRemainGL(temp);
+            CapacitanceLength.transform.localScale = new Vector3(1, 1, (temp+2.95f) / 60);
+            //Capacitance.gameObject.transform.GetChild(1).gameObject.transform.localScale = new Vector3(1, 1, 60 / temp);
         }
     }
 }

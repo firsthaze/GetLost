@@ -9,9 +9,10 @@ public class CharacterScaling : MonoBehaviour {
     private float dischargeSpeed; //生命值減少速度
     public float chargeRate;     //玩家體積放大
     private float dischargeRate;  //玩家體積減小
-    private GameObject grabObject; // 抓住的物件
-    public GameObject[] Bodys; // 實際要放大縮小的物件
+
     Vector3 distance;
+    //Vector3 distance_fixed = new Vector3(2f, 2f, 2f);
+
     // Use this for initialization
     void Start ()
     {
@@ -28,12 +29,12 @@ public class CharacterScaling : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-       // Discharge();
+        Discharge();
         Scaling();
     }
 
     void Scaling(){
-        grabObject = GameObject.FindGameObjectWithTag("Grabed");
+        GameObject grabObject = GameObject.FindGameObjectWithTag("Grabed");
         eletricCharge = characterInfo.GetEletricCharge();
         float tempCharge = eletricCharge / 10;
         float tempScale = (((tempCharge * tempCharge) - tempCharge + 15) / 35);
@@ -44,25 +45,29 @@ public class CharacterScaling : MonoBehaviour {
             tempForScale.z = tempScale;
 
             transform.localScale = tempForScale;
-            Debug.Log("tempForScale.x = " + tempForScale.x);
-            tempForScale.x = (1 / tempScale);
-            tempForScale.y = (1 / tempScale);
-            tempForScale.z = (1 / tempScale);
-            Debug.Log("tempForScale.x = " + tempForScale.x);
+            if (grabObject != null)
+            {
+                if(distance.x == 0f)
+                    distance = grabObject.gameObject.transform.localPosition - transform.localPosition;
+                
+                tempForScale.x = (1 / tempScale);
+                tempForScale.y = (1 / tempScale);
+                tempForScale.z = (1 / tempScale);
+
+                grabObject.gameObject.transform.localScale = tempForScale;
+                Debug.Log("object scale is  = " + tempForScale.x);
+            }
             
-            if(distance == null)
-                distance = grabObject.gameObject.transform.localPosition - transform.localPosition;
-            grabObject.gameObject.transform.localScale = tempForScale;
-            grabObject.gameObject.transform.localPosition = distance;
-            tempForScale.x = tempScale;
-            tempForScale.y = tempScale;
-            tempForScale.z = tempScale;
         }
         else
         {
-            // Do Nothing
-            
+            if (grabObject != null)
+                if (distance.x == 0f)
+                    distance = grabObject.gameObject.transform.position - transform.position;
         }
+
+        //Debug.Log("distance is : " + distance);
+        grabObject.gameObject.transform.position = transform.position + distance;
     }
 
 

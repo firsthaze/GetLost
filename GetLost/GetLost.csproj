@@ -91,6 +91,7 @@
     <Compile Include="Assets\Script\AvalibleObject.cs" />
     <Compile Include="Assets\Script\CameraRotater.cs" />
     <Compile Include="Assets\Script\CapacitanceOnce.cs" />
+    <Compile Include="Assets\Script\CapacitanceUnlimit.cs" />
     <Compile Include="Assets\Script\Character.cs" />
     <Compile Include="Assets\Script\CharacterScaling.cs" />
     <Compile Include="Assets\Script\DisplayNoticeBoard.cs" />

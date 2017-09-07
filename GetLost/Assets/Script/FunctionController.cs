@@ -26,6 +26,10 @@ public class FunctionController : MonoBehaviour {
                 Capacitance = GameObject.Find("capacitance_60_once");
                 DoCharge();
                 break;
+            case "capacitance_unlimit":
+                Capacitance = GameObject.Find("capacitance_unlimit");
+                DoChargeUnlimit();
+                break;
             default:
                 Debug.Log("objectName can't find :" + objectName);
                 break;
@@ -44,7 +48,15 @@ public class FunctionController : MonoBehaviour {
             Player.gameObject.GetComponent<CharacterScaling>().Charge();
             Capacitance.gameObject.transform.GetComponent<CapacitanceOnce>().SetRemainGL(temp);
             CapacitanceLength.transform.localScale = new Vector3(1, 1, (temp+2.95f) / 60);
-            //Capacitance.gameObject.transform.GetChild(1).gameObject.transform.localScale = new Vector3(1, 1, 60 / temp);
         }
+    }
+
+    void DoChargeUnlimit()
+    {
+        /*
+        if ()
+        {
+            
+        }*/
     }
 }
